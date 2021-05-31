@@ -41,7 +41,7 @@ class App extends PureComponent {
                 <div className={'modals-container'}>
                     <Modal className='modal' header={invokeHeader} text={invokeText}
                            modalState={activeModal} closeModal={this.closeModal}
-                           closeButton={closeButton} actions={modBtnCfg}/>
+                           closeButton={closeButton} actions={modBtnCfg} close={this.closeModal}/>
 
                     <div className={(activeModal === "closed") ? 'btn-section btn-inactive' : 'btn-section'}>
                         <Button btnCfg={appBtnCfg.get('b1')}

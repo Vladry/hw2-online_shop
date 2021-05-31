@@ -5,7 +5,7 @@ import Button from "../Button/Button";
 class Modal extends PureComponent {
 
     render() {
-        const {header, text, closeButton, closeModal, modalState, actions} = this.props;
+        const {header, text, closeButton, closeModal, modalState, actions, close} = this.props;
         if (modalState === 'closed') return null;
         return (
             <div className='modal'
@@ -13,13 +13,14 @@ class Modal extends PureComponent {
                      // do not close modal if anything inside modal content is clicked
                      e.stopPropagation();
                  }}>
+                <div className={ closeButton ? " modal-burger" : "--invisible"}
+                     onClick={close}>{closeButton ? "" : null}</div>
                 <h2 className="modal-header">{header}</h2>
-                <p>{closeButton && "//TODO: Допилить крестик закрытия окна!"}</p>
                 <div className="modal-body">
                     <p className="modal-text">{text}</p>
 
-                    <Button btnCfg ={actions.get('b1')} handler={ ()=>{} }/>
-                    <Button btnCfg ={actions.get('b2')} handler={closeModal} />
+                    <Button btnCfg={actions.get('b1')} handler={() => {}}/>
+                    <Button btnCfg={actions.get('b2')} handler={closeModal}/>
                 </div>
             </div>
         );
