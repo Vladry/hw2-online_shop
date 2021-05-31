@@ -1,6 +1,7 @@
 import React, {PureComponent} from 'react';
 import './Modal.scss';
 import Button from "../Button/Button";
+import modBtnCfg from '../Button/modBtnCfg';
 
 class Modal extends PureComponent {
     // state = {};
@@ -14,10 +15,9 @@ class Modal extends PureComponent {
                 <h2 className="modal-header">{header}</h2>
                 <div className="modal-body">
                     <p className="modal-text">{text}</p>
-                    <Button type='text' backgroundColor={"darkred"} onClick={()=>{}}
-                            btnText="Ok"/>
-                    <Button type='text' backgroundColor={"darkred"} onClick={()=>{}}
-                            btnText="Cancel"/>
+
+                    <Button btnCfg ={modBtnCfg.get('b1')} handler={ ()=>{} }/>
+                    <Button btnCfg ={modBtnCfg.get('b2')} handler={actions} />
                 </div>
             </div>
         );

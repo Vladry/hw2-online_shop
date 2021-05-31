@@ -10,19 +10,19 @@
 }
 
 .--red {
-  background-color: rgba(255, 10, 10, 0.3);
+  background-color: rgba(255, 10, 10, 0.6);
 }
 
 .--darkred {
-  background-color: rgba(80, 10, 10, 0.3);
+  background-color: rgba(80, 10, 10, 0.6);
 }
 
 .--green {
-  background-color: rgba(10, 255, 20, 0.3);
+  background-color: rgba(10, 255, 20, 0.6);
 }
 
 .--blue {
-  background-color: rgba(10, 10, 255, 0.3);
+  background-color: rgba(10, 10, 255, 0.6);
 }
 
 /*# sourceMappingURL=btnStyle.css.map */
