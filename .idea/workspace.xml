@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9637ec78-4acc-4516-b4f7-ae971fcb7928" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Button/appBtnCfg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Button/modBtnCfg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Modal/modalConfig.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hw_task/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/hw_task/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Button/Button.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button/Button.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Button/btnStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button/btnStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Button/btnStyle.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button/btnStyle.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modal/Modal.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/Modal.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modal/Modal.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/Modal.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Modal/Modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/Modal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modal/Modal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/Modal.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +70,7 @@
       <updated>1622392443724</updated>
       <workItem from="1622392444778" duration="555000" />
       <workItem from="1622393532925" duration="25000" />
-      <workItem from="1622393578538" duration="32900000" />
+      <workItem from="1622393578538" duration="42051000" />
     </task>
     <servers />
   </component>

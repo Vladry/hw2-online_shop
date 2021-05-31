@@ -1,9 +1,22 @@
+.wrapper {
+  text-align: center;
+  padding: 2em;
+  margin: auto;
+  max-width: 1200px;
+}
+
+.modals-container {}
+
+.--darkened {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
 .modal {
   color: white;
   width: 600px;
   height: 300px;
   border: 2px solid gray;
-  margin-bottom: 50px;
+  margin: 2em auto 3em auto;
   background-color: rgba(255,0,0, 0.8);
 }
 
@@ -11,13 +24,27 @@
   background-color: #b8180b;
   padding: 30px;
   font-size: 24px;
+  text-align: center;
 }
 
 .modal-body {
   Padding: 40px;
   font-size: 20px;
+  text-align: center;
 }
 
 .modal-text {
   padding-bottom: 40px;
+}
+
+.btn-section {
+  //display: none;  //альтернативное сокрытие кнопок вызова модалок
+  opacity: 0.2;
+  margin-bottom: 3em; //не удалять вообще!
+  text-align: center; //не удалять вообще!
+  &.btn-inactive {
+    margin-top: 12em;
+    display: block;
+    opacity: 1;
+  }
 }

@@ -1,23 +1,21 @@
 import React, {PureComponent} from 'react';
 import './Modal.scss';
 import Button from "../Button/Button";
-import modBtnCfg from '../Button/modBtnCfg';
 
 class Modal extends PureComponent {
-    // state = {};
 
     render() {
-        const {header, text, closeButton, actions, modalState} = this.props;
-        // const {} = this.state;
+        const {header, text, closeButton, closeModal, modalState, actions} = this.props;
         if (modalState === 'closed') return null;
         return (
             <div className='modal'>
                 <h2 className="modal-header">{header}</h2>
+                <p>{closeButton && "//TODO: Допилить крестик закрытия окна!"}</p>
                 <div className="modal-body">
                     <p className="modal-text">{text}</p>
 
-                    <Button btnCfg ={modBtnCfg.get('b1')} handler={ ()=>{} }/>
-                    <Button btnCfg ={modBtnCfg.get('b2')} handler={actions} />
+                    <Button btnCfg ={actions.get('b1')} handler={ ()=>{} }/>
+                    <Button btnCfg ={actions.get('b2')} handler={closeModal} />
                 </div>
             </div>
         );
