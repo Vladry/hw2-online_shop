@@ -8,7 +8,11 @@ class Modal extends PureComponent {
         const {header, text, closeButton, closeModal, modalState, actions} = this.props;
         if (modalState === 'closed') return null;
         return (
-            <div className='modal'>
+            <div className='modal'
+                 onClick={e => {
+                     // do not close modal if anything inside modal content is clicked
+                     e.stopPropagation();
+                 }}>
                 <h2 className="modal-header">{header}</h2>
                 <p>{closeButton && "//TODO: Допилить крестик закрытия окна!"}</p>
                 <div className="modal-body">

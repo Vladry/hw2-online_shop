@@ -21,6 +21,14 @@ class App extends PureComponent {
     closeModal = () => {
         this.setState({activeModal: "closed"});
     };
+    closeModAtSideClick = ({target}) => {
+        if (   target.classList.contains("btn")
+            || target.classList.contains('modal')
+          ) return;
+        else {
+            this.setState({activeModal: "closed"});
+        }
+    };
 
     render() {
         const {activeModal, closeButton} = this.state;
@@ -28,7 +36,8 @@ class App extends PureComponent {
         const invokeText = modalConfig.get(activeModal).text;
 
         return (
-            <div className={(activeModal === "closed") ? 'wrapper' : 'wrapper  --darkened'}>
+            <div className={(activeModal === "closed") ? 'wrapper' : 'wrapper  --darkened'}
+                 onClick={this.closeModAtSideClick}>
                 <div className={'modals-container'}>
                     <Modal className='modal' header={invokeHeader} text={invokeText}
                            modalState={activeModal} closeModal={this.closeModal}
