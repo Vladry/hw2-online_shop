@@ -1,0 +1,31 @@
+$btnOpacity: 0.3;
+$btnSaturation: 255;
+
+.btn {
+  padding: 10px;
+  border-radius: 5px;
+  min-width: 100px;
+  color: white;
+  //border: none;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #64b83c;
+  }
+}
+
+.--red {
+  background-color: rgba($btnSaturation, 10, 10, $btnOpacity);
+}
+.--darkred {
+  background-color: rgba(80, 10, 10, $btnOpacity);
+}
+
+.--green {
+  background-color: rgba(10, $btnSaturation, 20, $btnOpacity);
+}
+
+.--blue {
+  background-color: rgba(10, 10, $btnSaturation, $btnOpacity);;
+}
+

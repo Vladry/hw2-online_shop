@@ -1,0 +1,28 @@
+.btn {
+  padding: 10px;
+  border-radius: 5px;
+  min-width: 100px;
+  color: white;
+}
+.btn:hover {
+  cursor: pointer;
+  background-color: #64b83c;
+}
+
+.--red {
+  background-color: rgba(255, 10, 10, 0.3);
+}
+
+.--darkred {
+  background-color: rgba(80, 10, 10, 0.3);
+}
+
+.--green {
+  background-color: rgba(10, 255, 20, 0.3);
+}
+
+.--blue {
+  background-color: rgba(10, 10, 255, 0.3);
+}
+
+/*# sourceMappingURL=btnStyle.css.map */
