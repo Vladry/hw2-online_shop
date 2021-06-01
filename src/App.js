@@ -5,10 +5,12 @@ import Modal from "./components/Modal/Modal";
 import modalConfig from './components/Modal/modalConfig';
 import appBtnCfg from './components/Button/appBtnCfg';
 import modBtnCfg from './components/Button/modBtnCfg';
+import ProductList from "./components/ProductList/ProductList";
 
 class App extends PureComponent {
     state = {
         activeModal: "closed",
+        products: []
     };
 
     openModal(modalId) {
@@ -29,6 +31,10 @@ class App extends PureComponent {
             this.setState({activeModal: "closed"});
         }
     };
+    addToCart=({target})=>{
+        const clickedTarget = target.closest('.card-item');
+        console.log('adding to cart: ', clickedTarget)
+    };
 
     render() {
         const {activeModal, closeButton} = this.state;
@@ -43,19 +49,30 @@ class App extends PureComponent {
                            modalState={activeModal} closeModal={this.closeModal}
                            closeButton={closeButton} actions={modBtnCfg} close={this.closeModal}/>
 
-                    <div className={(activeModal === "closed") ? 'btn-section btn-inactive' : 'btn-section'}>
+                    <div className={(activeModal === "closed") ? 'btn-section btn-inactive' : 'btn-section '}>
                         <Button btnCfg={appBtnCfg.get('b1')}
                                 handler={() => this.openModal("m1")}/>
-                        <Button btnCfg={appBtnCfg.get('b2')}
-                                handler={() => this.openModal("m2")}/>
+                        {/*<Button btnCfg={appBtnCfg.get('b2')}*/}
+                        {/*        handler={() => this.openModal("m2")}/>*/}
                         {/*<Button btnCfg={appBtnCfg.get('b3')}*/}
                         {/*        handler={() => this.openModal("closed")}/>*/}
+                        <ProductList products={this.state.products} cartHandler={this.addToCart}/>
                     </div>
                 </div>
             </div>
         );
     }
 
+    componentDidMount() {
+        fetch('products.json', {
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(r=>r.json()).then(res=>{
+            console.log(res);
+            this.setState(()=>({products: res}))});
+
+    }
 }
 
 

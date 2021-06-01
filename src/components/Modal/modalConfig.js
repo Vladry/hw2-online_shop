@@ -2,8 +2,8 @@
 //https://itchief.ru/javascript/associative-arrays
 const modalConfig = new Map([
     ["m1", {
-        header: "Do you want to delete this file?",
-        text: "Once you delete this file, it won't be possible to undo this action.\n Are you sure you want to delete it?"
+        header: "Confirm",
+        text: "Подтвердите добавление\n  товара в корзину!"
     }],
     ["m2", {
         header: "Хотите еще что ни будь?",

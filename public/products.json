@@ -1,5 +1,4 @@
-{
-  "products": [
+[
     {
       "id": "000",
       "name" : "портсигар",
@@ -20,9 +19,9 @@
       "id"   : "002",
       "name" : "пенал",
       "url"  : "https://static4.depositphotos.com/1005726/373/i/600/depositphotos_3732060-stock-photo-pencil-case.jpg",
-      "price": "",
+      "price": "53",
       "code" : "48259",
-      "color": ""
+      "color": "мультиколор"
     },
     {
       "id": "003",
@@ -105,4 +104,3 @@
       "color": "синий"
     }
   ]
-}

@@ -1,0 +1,59 @@
+@charset "UTF-8";
+.card-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  gap: 10px;
+  background-color: rgba(200, 194, 153, 0.4);
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding: 2em;
+}
+
+.card-item {
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  border: 5px groove gray;
+  width: 260px;
+  background-color: white;
+}
+
+.card-image {
+  margin-bottom: 20px;
+  width: 230px;
+  border-radius: 10px;
+  box-shadow: 2px 2px #406062, -1px -1px #406062;
+}
+
+.card-header::before {
+  content: "";
+  width: 140px;
+  height: 3px;
+  background-color: #324343;
+  position: absolute;
+  bottom: 172px;
+  left: 60px;
+}
+
+.card-price::before {
+  content: "UAH ";
+}
+
+.card-art::before {
+  content: "арт. ";
+}
+
+.card-color::before {
+  content: "цвет: ";
+}
+
+.card-description {
+  margin: 5px auto;
+}
+
+/*# sourceMappingURL=productList.css.map */
