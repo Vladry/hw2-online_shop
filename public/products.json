@@ -1,0 +1,108 @@
+{
+  "products": [
+    {
+      "id": "000",
+      "name" : "портсигар",
+      "price": "140",
+      "url"  : "https://images.ua.prom.st/1505229620_w640_h640_1505229620.jpg",
+      "code" : "30402",
+      "color": "фиолетовый"
+    },
+    {
+      "id"   : "001",
+      "name" : "вафля",
+      "price": "40",
+      "url"  : "https://i.ytimg.com/vi/_JeLc8g9iwg/maxresdefault.jpg",
+      "code" : "42658",
+      "color": "бирюзовый"
+    },
+    {
+      "id"   : "002",
+      "name" : "пенал",
+      "url"  : "https://static4.depositphotos.com/1005726/373/i/600/depositphotos_3732060-stock-photo-pencil-case.jpg",
+      "price": "",
+      "code" : "48259",
+      "color": ""
+    },
+    {
+      "id": "003",
+      "name" : "монитор",
+      "url"  : "https://img.ktc.ua/img/base/1/0/286850.jpg",
+      "price": "39943",
+      "code" : "47538",
+      "color": "черный"
+    },
+    {
+      "id": "004",
+      "name": "усилитель",
+      "url": "https://splaudio.com.ua/upload/iblock/1c2/1c219f49dde464305ab2e4c9a377e80e.jpg",
+      "price": "5040",
+      "code": "41257",
+      "color": "серебристый"
+    },
+    {
+      "id": "005",
+      "name": "доска гладильная",
+      "url": "https://cdn.comfy.ua/media/catalog/product/cache/4/image/1440x1080/62defc7f46f3fbfc8afcd112227d1181/f/i/file_93_4.jpg",
+      "price": "599",
+      "code": "82537",
+      "color": "оранжевая"
+    },
+    {
+      "id": "006",
+      "name": "кот учёный",
+      "url": "https://puzzleit.ru/files/puzzles/28/28123/_original.jpg",
+      "price": "504304",
+      "code": "87468",
+      "color": "пятнистый"
+    },
+    {
+      "id": "007",
+      "name": "панель LCD",
+      "url": "https://brain.com.ua/static/images/prod_img/6/1/U0251461_big.jpg",
+      "price": "50341",
+      "code": "82537",
+      "color": "серебристый"
+    },
+    {
+      "id": "008",
+      "name": "напильник",
+      "url": "https://tdp.com.ua/images/catalog/1b517b0ee1/1556113556_6ad1b.jpg",
+      "price": "70",
+      "code": "47158",
+      "color": "серый"
+    },
+    {
+      "id": "009",
+      "name": "обои водостойкие",
+      "url": "https://www.oboicity.ru/sites/default/files/wallpaper/models/b5749.jpg",
+      "price": "230",
+      "code": "87452",
+      "color": "бежевый"
+    },
+    {
+      "id": "010",
+      "name": "лента малярная",
+      "url": "https://images.ua.prom.st/633529654_malyarnaya-lenta-magnum.jpg",
+      "price": "16",
+      "code": "12536",
+      "color": "желтая"
+    },
+    {
+      "id": "011",
+      "name": "кран - колонка",
+      "price": "1430",
+      "url": "https://images.ua.prom.st/2757066848_w700_h500_vodozabornaya-chugunnaya-kolonka.jpg",
+      "code": "68954",
+      "color": "металлик"
+    },
+    {
+      "id": "012",
+      "name": "гидроцилиндр",
+      "url": "https://images.ua.prom.st/1221728599_w640_h640_gidrotsilindr-ms-5025h500-311.jpg",
+      "price": "8900",
+      "code": "45827",
+      "color": "синий"
+    }
+  ]
+}
