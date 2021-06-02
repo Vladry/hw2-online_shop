@@ -6,6 +6,7 @@ import modalConfig from './components/Modal/modalConfig';
 import appBtnCfg from './components/Button/appBtnCfg';
 import modBtnCfg from './components/Button/modBtnCfg';
 import ProductList from "./components/ProductList/ProductList";
+import * as cart from "./cartHandleUtils.js";
 
 class App extends PureComponent {
     state = {
@@ -33,19 +34,6 @@ class App extends PureComponent {
         }
     };
 
-    checkCartInLocalStorage() {
-        if (localStorage.getItem("cart")
-            && localStorage.getItem("cart").length > 0) {
-            return JSON.parse(localStorage.getItem("cart"));
-        } else return [];
-    }
-
-    alreadyExists(currentCart, getProduct) {
-        if (currentCart.length === 0) return true;
-        return currentCart.some(cartProduct => cartProduct.id === getProduct.id
-        );
-    }
-
     saveCart(currentCart) {
         if (currentCart.length === 0) return;
         localStorage.setItem("cart", JSON.stringify(currentCart));
@@ -57,21 +45,14 @@ class App extends PureComponent {
         // const clickedTarget = target.closest('.card-item');
         // this.openModal("m1");
         const getProduct = products.find(productItem => productItem.id === id);
-        let currentCart = this.checkCartInLocalStorage();
+        let currentCart = cart.checkCartInLocalStorage();
         if (currentCart.length === 0) {
             this.saveCart([getProduct]);
             return;
-        }
-        else
-            if ( !this.alreadyExists(currentCart, getProduct) ) {
+        } else if (!cart.alreadyExists(currentCart, getProduct)) {
             currentCart.push(getProduct);
             this.saveCart(currentCart)
         }
-
-
-        // console.log("getProduct", getProduct);
-        // console.log("currentCart", currentCart);
-
     };
 
     render() {
