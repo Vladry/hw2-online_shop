@@ -10,7 +10,8 @@ import ProductList from "./components/ProductList/ProductList";
 class App extends PureComponent {
     state = {
         activeModal: "closed",
-        products: []
+        products: [],
+        cart: []
     };
 
     openModal(modalId) {
@@ -24,16 +25,26 @@ class App extends PureComponent {
         this.setState({activeModal: "closed"});
     };
     closeModAtSideClick = ({target}) => {
-        if (   target.classList.contains("btn")
+        if (target.classList.contains("btn")
             || target.classList.contains('modal')
-          ) return;
+        ) return;
         else {
             this.setState({activeModal: "closed"});
         }
     };
-    addToCart=({target})=>{
-        const clickedTarget = target.closest('.card-item');
-        console.log('adding to cart: ', clickedTarget)
+    addToCart = (id, {target}) => {
+        const {products}= this.state;
+        // const clickedTarget = target.closest('.card-item');
+        const getProduct = products.find(productItem => productItem.id === id);
+        let currentCart =[];
+        if (localStorage.getItem("cart")) {
+            currentCart = JSON.parse(localStorage.getItem("cart"));
+        }
+            currentCart.push(getProduct);
+            localStorage.setItem("cart", JSON.stringify(currentCart));
+            this.setState(()=>({cart: currentCart}));
+        console.log(currentCart);
+
     };
 
     render() {
@@ -68,9 +79,10 @@ class App extends PureComponent {
             headers: {
                 "Content-Type": "application/json"
             }
-        }).then(r=>r.json()).then(res=>{
+        }).then(r => r.json()).then(res => {
             console.log(res);
-            this.setState(()=>({products: res}))});
+            this.setState(() => ({products: res}))
+        });
 
     }
 }

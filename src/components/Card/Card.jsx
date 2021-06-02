@@ -13,10 +13,10 @@ class Card extends PureComponent {
                     <p className="card-price">{productItem.price}</p>
                     <p className="card-art">{productItem.code}</p>
                     <p  className="card-color">{productItem.color}</p>
-                    <div>
+                    <div className="card-btn" >
                         {/*<svg></svg>*/}
                         <Button btnCfg={appBtnCfg.get('b4')}
-                                            handler={cartHandler}/>
+                                            handler={cartHandler.bind(null, productItem.id)}/>
                     </div>
                 </div>
             </div>
