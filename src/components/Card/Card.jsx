@@ -22,6 +22,9 @@ class Card extends PureComponent {
             </div>
         );
     }
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log("Card.js-----> componentDidUpdate()");
+    }
 }
 
 export default Card;

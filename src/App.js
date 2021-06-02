@@ -32,18 +32,45 @@ class App extends PureComponent {
             this.setState({activeModal: "closed"});
         }
     };
+
+    checkCartInLocalStorage() {
+        if (localStorage.getItem("cart")
+            && localStorage.getItem("cart").length > 0) {
+            return JSON.parse(localStorage.getItem("cart"));
+        } else return [];
+    }
+
+    alreadyExists(currentCart, getProduct) {
+        if (currentCart.length === 0) return true;
+        return currentCart.some(cartProduct => cartProduct.id === getProduct.id
+        );
+    }
+
+    saveCart(currentCart) {
+        if (currentCart.length === 0) return;
+        localStorage.setItem("cart", JSON.stringify(currentCart));
+        this.setState(() => ({cart: currentCart}));
+    }
+
     addToCart = (id, {target}) => {
-        const {products}= this.state;
+        const {products} = this.state;
         // const clickedTarget = target.closest('.card-item');
+        // this.openModal("m1");
         const getProduct = products.find(productItem => productItem.id === id);
-        let currentCart =[];
-        if (localStorage.getItem("cart")) {
-            currentCart = JSON.parse(localStorage.getItem("cart"));
+        let currentCart = this.checkCartInLocalStorage();
+        if (currentCart.length === 0) {
+            this.saveCart([getProduct]);
+            return;
         }
+        else
+            if ( !this.alreadyExists(currentCart, getProduct) ) {
             currentCart.push(getProduct);
-            localStorage.setItem("cart", JSON.stringify(currentCart));
-            this.setState(()=>({cart: currentCart}));
-        console.log(currentCart);
+            this.saveCart(currentCart)
+        }
+
+
+        // console.log("getProduct", getProduct);
+        // console.log("currentCart", currentCart);
 
     };
 
@@ -61,12 +88,8 @@ class App extends PureComponent {
                            closeButton={closeButton} actions={modBtnCfg} close={this.closeModal}/>
 
                     <div className={(activeModal === "closed") ? 'btn-section btn-inactive' : 'btn-section '}>
-                        <Button btnCfg={appBtnCfg.get('b1')}
-                                handler={() => this.openModal("m1")}/>
-                        {/*<Button btnCfg={appBtnCfg.get('b2')}*/}
-                        {/*        handler={() => this.openModal("m2")}/>*/}
-                        {/*<Button btnCfg={appBtnCfg.get('b3')}*/}
-                        {/*        handler={() => this.openModal("closed")}/>*/}
+                        {/*    <Button btnCfg={appBtnCfg.get('b1')}*/}
+                        {/*            handler={() => this.openModal("m1")}/>*/}
                         <ProductList products={this.state.products} cartHandler={this.addToCart}/>
                     </div>
                 </div>
@@ -85,6 +108,10 @@ class App extends PureComponent {
         });
 
     }
+
+    // componentDidUpdate(prevProps, prevState, snapshot) {
+    //     //     console.log("App.js-----> componentDidUpdate()");
+    //     // }
 }
 
 

@@ -1,3 +1,4 @@
+Для себя: опримизация по shouldcomponentupdate: https://www.youtube.com/watch?v=Jw1zocLDnnc
 
 #### Технические требования:
 
