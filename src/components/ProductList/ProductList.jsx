@@ -18,6 +18,10 @@ class ProductList extends PureComponent {
             </div>
         );
     }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log('ProductList-----updated!');
+    }
 }
 
 ProductList.propTypes = {

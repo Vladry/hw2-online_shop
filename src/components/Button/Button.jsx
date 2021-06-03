@@ -7,8 +7,9 @@ const Button = (props) => {
     const className = `btn --${btnCfg.bgCol}`;
     return (
         <>
-            <button type='button' className={className}
-                    onClick={handler}> {btnCfg.btnText} </button>
+            <button type='button' className={className} onClick={handler}>
+                {btnCfg.btnText}
+            </button>
         </>
     );
 };

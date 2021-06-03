@@ -18,8 +18,10 @@ class App extends PureComponent {
     openModal(modalId) {
         this.setState({
             activeModal: modalId,
-            closeButton: true
+            closeButton: true,
+            addingIdtoCart: ""
         });
+        scrollTo({top:0});
     }
 
     closeModal = () => {
@@ -40,9 +42,19 @@ class App extends PureComponent {
         this.setState(() => ({cart: currentCart}));
     }
 
-    addToCart = (id, {target}) => {
+    addToCartPermitted = ({target}) => {  // получили из модалки ок на добавление товара в cart
+        // const okBtnTxt = target.innerText;
+        this.closeModal();  // закрыли модалку
+        this.addToCart (this.state.addingIdtoCart); // запустили на добавление в Cart товара с id = addingIdtoCart
+    };
+
+    confirmAddToCart = (id, {target})=> { //сюда попали по клику "Add to Cart" с карточки товара и получили id добавляемого товара и ивент с нажатой карточки
         // const clickedTarget = target.closest('.card-item');
-        this.openModal("m1");
+        this.openModal("m1"); // запустили модалку, запросили Ок для добавления товара в корзину
+        this.setState(()=> ({addingIdtoCart: id}));
+    };
+
+    addToCart = (id) => { //сюда получить id товара к добавлению в тележку
         const {products} = this.state;
         const getProduct = products.find(productItem => productItem.id === id);
         let currentCart = cart.checkCartInLocalStorage();
@@ -66,12 +78,13 @@ class App extends PureComponent {
                 <div className={'modals-container'}>
                     <Modal className='modal' header={invokeHeader} text={invokeText}
                            modalState={activeModal} closeModal={this.closeModal}
-                           closeButton={closeButton} actions={modBtnCfg} close={this.closeModal}/>
+                           closeButton={closeButton} actions={modBtnCfg} permitAddToCart={this.addToCartPermitted}
+                           close={this.closeModal}/>
 
                     <div className={(activeModal === "closed") ? 'btn-section btn-inactive' : 'btn-section '}>
                         {/*    <Button btnCfg={appBtnCfg.get('b1')}*/}
                         {/*            handler={() => this.openModal("m1")}/>*/}
-                        <ProductList products={this.state.products} cartHandler={this.addToCart}/>
+                        <ProductList products={this.state.products} cartHandler={this.confirmAddToCart}/>
                     </div>
                 </div>
             </div>
@@ -90,12 +103,8 @@ class App extends PureComponent {
 
     }
 
-    // componentDidUpdate(prevProps, prevState, snapshot) {
-    //     //     console.log("App.js-----> componentDidUpdate()");
-    //     // }
-
-
 }
+
 
 
 export default App;
