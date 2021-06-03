@@ -1,6 +1,7 @@
 import React, {PureComponent} from 'react';
 import './Modal.scss';
 import Button from "../Button/Button";
+import PropTypes from 'prop-types';
 
 class Modal extends PureComponent {
 
@@ -26,5 +27,16 @@ class Modal extends PureComponent {
         );
     }
 }
+
+Modal.propTypes= {
+    header:      PropTypes.string.isRequired,
+    text:        PropTypes.string.isRequired,
+    closeButton: PropTypes.func,
+    closeModal:  PropTypes.func,
+    modalState:  PropTypes.string.isRequired,
+    actions:     PropTypes.object.isRequired,
+    close:       PropTypes.func
+};
+Modal.defaultProps = { };
 
 export default Modal;

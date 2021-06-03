@@ -41,9 +41,9 @@ class App extends PureComponent {
     }
 
     addToCart = (id, {target}) => {
-        const {products} = this.state;
         // const clickedTarget = target.closest('.card-item');
-        // this.openModal("m1");
+        this.openModal("m1");
+        const {products} = this.state;
         const getProduct = products.find(productItem => productItem.id === id);
         let currentCart = cart.checkCartInLocalStorage();
         if (currentCart.length === 0) {
@@ -93,6 +93,8 @@ class App extends PureComponent {
     // componentDidUpdate(prevProps, prevState, snapshot) {
     //     //     console.log("App.js-----> componentDidUpdate()");
     //     // }
+
+
 }
 
 

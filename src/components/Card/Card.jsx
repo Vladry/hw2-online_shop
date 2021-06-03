@@ -1,6 +1,7 @@
 import React, {PureComponent} from 'react';
 import Button from "../Button/Button";
 import appBtnCfg from "../Button/appBtnCfg";
+import PropTypes from 'prop-types';
 
 class Card extends PureComponent {
     render() {
@@ -26,5 +27,16 @@ class Card extends PureComponent {
         console.log("Card.js-----> componentDidUpdate()");
     }
 }
+Card.propTypes = {
+    productItem: PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        price: PropTypes.string.isRequired,
+        url: PropTypes.string,
+        code: PropTypes.string,
+        color: PropTypes.string
+    }),
+    cartHandler: PropTypes.func
+};
 
 export default Card;
