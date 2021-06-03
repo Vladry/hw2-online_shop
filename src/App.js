@@ -7,6 +7,7 @@ import appBtnCfg from './components/Button/appBtnCfg';
 import modBtnCfg from './components/Button/modBtnCfg';
 import ProductList from "./components/ProductList/ProductList";
 import * as cart from "./cartHandleUtils.js";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 class App extends PureComponent {
     state = {
@@ -21,7 +22,7 @@ class App extends PureComponent {
             closeButton: true,
             addingIdtoCart: ""
         });
-        scrollTo({top:0});
+        scroll.scrollToTop();  //альтернативный скроллинг при открытии Модалки
     }
 
     closeModal = () => {
@@ -76,7 +77,8 @@ class App extends PureComponent {
             <div className={(activeModal === "closed") ? 'wrapper' : 'wrapper  --darkened'}
                  onClick={this.closeModAtSideClick}>
                 <div className={'modals-container'}>
-                    <Modal className='modal' header={invokeHeader} text={invokeText}
+
+                    <Modal id='modal'  className='modal' header={invokeHeader} text={invokeText}
                            modalState={activeModal} closeModal={this.closeModal}
                            closeButton={closeButton} actions={modBtnCfg} permitAddToCart={this.addToCartPermitted}
                            close={this.closeModal}/>
@@ -86,6 +88,7 @@ class App extends PureComponent {
                         {/*            handler={() => this.openModal("m1")}/>*/}
                         <ProductList products={this.state.products} cartHandler={this.confirmAddToCart}/>
                     </div>
+
                 </div>
             </div>
         );
