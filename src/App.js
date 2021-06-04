@@ -7,7 +7,7 @@ import appBtnCfg from './components/Button/appBtnCfg';
 import modBtnCfg from './components/Button/modBtnCfg';
 import ProductList from "./components/ProductList/ProductList";
 import * as cart from "./cartHandleUtils.js";
-import { Link, animateScroll as scroll } from "react-scroll";
+import {Link, animateScroll as scroll} from "react-scroll";
 
 class App extends PureComponent {
     state = {
@@ -20,7 +20,6 @@ class App extends PureComponent {
         this.setState({
             activeModal: modalId,
             closeButton: true,
-            addingIdtoCart: ""
         });
         scroll.scrollToTop();  //альтернативный скроллинг при открытии Модалки
     }
@@ -38,7 +37,7 @@ class App extends PureComponent {
     };
 
     saveCart(currentCart) {
-        if (currentCart.length === 0) return;
+        // if (currentCart.length === 0) return;
         localStorage.setItem("cart", JSON.stringify(currentCart));
         this.setState(() => ({cart: currentCart}));
     }
@@ -46,13 +45,13 @@ class App extends PureComponent {
     addToCartPermitted = ({target}) => {  // получили из модалки ок на добавление товара в cart
         // const okBtnTxt = target.innerText;
         this.closeModal();  // закрыли модалку
-        this.addToCart (this.state.addingIdtoCart); // запустили на добавление в Cart товара с id = addingIdtoCart
+        this.addToCart(this.state.addingIdtoCart); // запустили на добавление в Cart товара с id = addingIdtoCart
     };
 
-    confirmAddToCart = (id, {target})=> { //сюда попали по клику "Add to Cart" с карточки товара и получили id добавляемого товара и ивент с нажатой карточки
+    confirmAddToCart = (id, {target}) => { //сюда зщ по клику "Add to Cart" с карточки товара и получили id добавляемого товара и ивент с нажатой карточки
         // const clickedTarget = target.closest('.card-item');
         this.openModal("m1"); // запустили модалку, запросили Ок для добавления товара в корзину
-        this.setState(()=> ({addingIdtoCart: id}));
+        this.setState(() => ({addingIdtoCart: id}));
     };
 
     addToCart = (id) => { //сюда получить id товара к добавлению в тележку
@@ -78,7 +77,7 @@ class App extends PureComponent {
                  onClick={this.closeModAtSideClick}>
                 <div className={'modals-container'}>
 
-                    <Modal id='modal'  className='modal' header={invokeHeader} text={invokeText}
+                    <Modal id='modal' className='modal' header={invokeHeader} text={invokeText}
                            modalState={activeModal} closeModal={this.closeModal}
                            closeButton={closeButton} actions={modBtnCfg} permitAddToCart={this.addToCartPermitted}
                            close={this.closeModal}/>
@@ -86,7 +85,8 @@ class App extends PureComponent {
                     <div className={(activeModal === "closed") ? 'btn-section btn-inactive' : 'btn-section '}>
                         {/*    <Button btnCfg={appBtnCfg.get('b1')}*/}
                         {/*            handler={() => this.openModal("m1")}/>*/}
-                        <ProductList products={this.state.products} cartHandler={this.confirmAddToCart}/>
+                        <ProductList products={this.state.products} cart={this.state.cart}
+                                     cartHandler={this.confirmAddToCart}/>
                     </div>
 
                 </div>
@@ -95,6 +95,9 @@ class App extends PureComponent {
     }
 
     componentDidMount() {
+        localStorage.getItem("cart")
+        && this.setState(() => ({cart: JSON.parse(localStorage.getItem("cart"))}));
+
         fetch('products.json', {
             headers: {
                 "Content-Type": "application/json"
@@ -107,7 +110,6 @@ class App extends PureComponent {
     }
 
 }
-
 
 
 export default App;

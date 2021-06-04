@@ -2,10 +2,15 @@ import React, {PureComponent} from 'react';
 import Button from "../Button/Button";
 import appBtnCfg from "../Button/appBtnCfg";
 import PropTypes from 'prop-types';
+import {ShoppingCart} from '../../icons/shoppingCart';
 
 class Card extends PureComponent {
+    state = {alreadyInCart: false};
+
     render() {
-        const {productItem, cartHandler} = this.props;
+        const {productItem, cartHandler, cart} = this.props;
+        const prodIsInCart = cart.some((cartItem)=> cartItem.id === productItem.id);
+
         return (
             <div className="card-item" data-name={productItem.name}>
                 <img className="card-image" src={productItem.url} alt='product-image'/>
@@ -15,7 +20,8 @@ class Card extends PureComponent {
                     <p className="card-art">{productItem.code}</p>
                     <p  className="card-color">{productItem.color}</p>
                     <div className="card-btn" >
-                        {/*<svg></svg>*/}
+                        <ShoppingCart color ={prodIsInCart ? "red" : "green"} width = "22" className = 'svg-class'
+                        cartHandler= {cartHandler.bind(null, productItem.id)} />
                         <Button btnCfg={appBtnCfg.get('b4')}
                                             handler={cartHandler.bind(null, productItem.id)}/>
                     </div>
@@ -26,6 +32,10 @@ class Card extends PureComponent {
     componentDidUpdate(prevProps, prevState, snapshot) {
         console.log("Card.js-----> componentDidUpdate()");
     }
+    // componentDidMount() {
+    //     const cartSvg = document.querySelector('.svg-class');
+    //     cartSvg.addEventListener("click", this.cartHandler.bind(null, this.props.productItem.id))
+    // }
 }
 Card.propTypes = {
     productItem: PropTypes.shape({

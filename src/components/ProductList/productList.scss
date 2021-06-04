@@ -56,3 +56,10 @@
 .card-btn {
   margin: 1em auto;
 }
+.svg-class {
+  color: blue;
+  &:hover {
+   cursor: pointer;
+    background-color: green;
+  }
+}

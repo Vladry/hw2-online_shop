@@ -56,4 +56,12 @@
   margin: 1em auto;
 }
 
+.svg-class {
+  color: blue;
+}
+.svg-class:hover {
+  cursor: pointer;
+  background-color: green;
+}
+
 /*# sourceMappingURL=productList.css.map */

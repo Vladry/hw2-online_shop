@@ -2,11 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9637ec78-4acc-4516-b4f7-ae971fcb7928" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/icons/shoppingCart.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/icons/svg/add-to-cart.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/icons/svg/shopping-cart.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/icons/svg/shopping-cart_2.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw_task/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/hw_task/readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/Modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/Modal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Card/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/Card.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProductList/ProductList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProductList/ProductList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProductList/productList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProductList/productList.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProductList/productList.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProductList/productList.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProductList/productList.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProductList/productList.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/icons/star.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/icons/svg/star.svg" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,13 +40,17 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Сданные Работы/React/hw1_modal-window" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/icons/svg" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.gutterIcons" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\DELL\WebstormProjects\hw2- Online shop\src\icons\svg" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\DELL\WebstormProjects\hw2- Online shop\src\icons\svg" />
       <recent name="C:\Users\DELL\WebstormProjects\hw1_modal-window\src\components\Button" />
     </key>
   </component>
@@ -70,7 +82,7 @@
       <workItem from="1622547655525" duration="10023000" />
       <workItem from="1622576711730" duration="44547000" />
       <workItem from="1622729065587" duration="5015000" />
-      <workItem from="1622735850748" duration="7984000" />
+      <workItem from="1622735850748" duration="22142000" />
     </task>
     <servers />
   </component>
@@ -100,6 +112,18 @@
           <url>file://$PROJECT_DIR$/src/App.js</url>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/Card/Card.jsx</url>
+          <line>22</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/ProductList/ProductList.jsx</url>
+          <line>7</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
