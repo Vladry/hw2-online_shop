@@ -12,7 +12,6 @@ class Modal extends PureComponent {
         return (
 
             <div className='modal'
-
                  onClick={e => {
                      // do not close modal if anything inside modal content is clicked
                      e.stopPropagation();
@@ -24,8 +23,7 @@ class Modal extends PureComponent {
                     smooth={true}
                     offset={-70}
                     duration={500}
-                >Modal
-                </Link>
+                >
                 <div className={closeButton ? " modal-burger" : "--invisible"}
                      onClick={close}>{closeButton ? "" : null}</div>
                 <h2 className="modal-header">{header}</h2>
@@ -35,7 +33,7 @@ class Modal extends PureComponent {
                     <Button btnCfg={actions.get('b1')} handler={permitAddToCart}/>
                     <Button btnCfg={actions.get('b2')} handler={closeModal}/>
                 </div>
-
+                </Link>
             </div>
 
         );
