@@ -5,14 +5,15 @@ import PropTypes from "prop-types";
 
 class ProductList extends PureComponent {
     render() {
-        const {products, cartHandler, wishListHandler, cart, wishList} = this.props;
+        const {products, cartHandler, wishListHandler, cart, wishList, listsHandler} = this.props;
         const cardlist = products.map(productItem =>
             <Card key={productItem.id}
                   productItem={productItem}
                   cart = {cart}
                   wishList={wishList}
-                  cartHandler={cartHandler}
-                  wishListHandler={wishListHandler}
+                  listsHandler = {listsHandler}
+                // cartHandler={cartHandler}
+                // wishListHandler={wishListHandler}
             />
         );
 
@@ -39,7 +40,7 @@ ProductList.propTypes = {
             color: PropTypes.string
         })
     ),
-    cartHandler: PropTypes.func,
+    listsHandler: PropTypes.func,
 };
 ProductList.defaultProps = {
 // задание дефолтных значений для данного типа пропсов не реализуемо!

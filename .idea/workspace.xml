@@ -2,21 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9637ec78-4acc-4516-b4f7-ae971fcb7928" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/icons/ShoppingWishList.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/wishListHandleUtils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Button/appBtnCfg.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button/appBtnCfg.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Button/modBtnCfg.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button/modBtnCfg.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Card/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/Card.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Modal/Modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/Modal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/modalConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/modalConfig.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ProductList/ProductList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProductList/ProductList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProductList/productList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProductList/productList.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProductList/productList.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProductList/productList.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProductList/productList.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProductList/productList.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/icons/shoppingCart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/icons/ShoppingCart.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/icons/ShoppingCart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/icons/ShoppingCart.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/icons/ShoppingWishList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/icons/ShoppingWishList.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -92,7 +84,7 @@
       <workItem from="1622897042888" duration="23000" />
       <workItem from="1622985276299" duration="155000" />
       <workItem from="1623011397211" duration="1305000" />
-      <workItem from="1623013272235" duration="10817000" />
+      <workItem from="1623013272235" duration="19155000" />
     </task>
     <servers />
   </component>
@@ -142,31 +134,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/App.js</url>
-          <line>46</line>
+          <line>48</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/App.js</url>
-          <line>91</line>
+          <line>102</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/components/Modal/Modal.jsx</url>
-          <line>33</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/App.js</url>
-          <line>65</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/App.js</url>
-          <line>77</line>
+          <line>88</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="13" />
         </line-breakpoint>

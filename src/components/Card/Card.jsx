@@ -9,7 +9,7 @@ class Card extends PureComponent {
     state = {alreadyInCart: false};
 
     render() {
-        const {productItem, cartHandler, wishListHandler, cart, wishList} = this.props;
+        const {productItem, cartHandler, wishListHandler, cart, wishList, listsHandler} = this.props;
         const prodIsInCart = cart.some((cartItem)=> cartItem.id === productItem.id);
         const productIsInFavorites = wishList.some((cartItem)=> cartItem.id === productItem.id);
         // const productIsInFavorites = false; // TODO productIsInFavorites
@@ -23,12 +23,15 @@ class Card extends PureComponent {
                     <p className="card-art">{productItem.code}</p>
                     <p  className="card-color">{productItem.color}</p>
                     <div className="card-btn" >
-                        <ShoppingCart color ={prodIsInCart ? "red" : "green"} width = "22" className = 'svg-class'
-                        cartHandler= {cartHandler.bind(null, productItem.id)} />
+                        <ShoppingCart color ={prodIsInCart ? "red" : "green"} width = "22" className = 'svg-class --activate-cart-modal'
+                        // cartHandler= {cartHandler.bind(null, productItem.id)}
+                                      handler={ listsHandler.bind(null, productItem.id) }/>
                         <Button btnCfg={appBtnCfg.get('cart')}
-                                            handler={cartHandler.bind(null, productItem.id)}/>
-                        <ShoppingWishList color={productIsInFavorites ? "red" : "blue"} width="22" className='svg-class --activate-awish-list-modal'
-                                          wishListHandler= {wishListHandler.bind(null, productItem.id)} />
+                                handler={ listsHandler.bind(null, productItem.id) }/>
+                                            {/*handler={cartHandler.bind(null, productItem.id)}/>*/}
+                        <ShoppingWishList color={productIsInFavorites ? "red" : "blue"} width="22" className='svg-class --activate-wish-list-modal'
+                                          // wishListHandler= {wishListHandler.bind(null, productItem.id)}
+                                          handler={ listsHandler.bind(null, productItem.id) }   />
                     </div>
                 </div>
             </div>
@@ -51,7 +54,7 @@ Card.propTypes = {
         code: PropTypes.string,
         color: PropTypes.string
     }),
-    cartHandler: PropTypes.func
+    listsHandler: PropTypes.func
 };
 
 export default Card;
