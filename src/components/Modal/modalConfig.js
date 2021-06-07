@@ -3,7 +3,7 @@
 const modalConfig = new Map([
     ["cart", {
         header: "Confirm",
-        text: "Подтвердите добавление\n  товара в корзину!"
+        text: "Подтвердите добавление\n  товара в Cart!"
     }],
     ["m2", {
         header: "Хотите еще что ни будь?",

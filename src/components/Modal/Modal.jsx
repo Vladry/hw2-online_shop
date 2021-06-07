@@ -32,7 +32,6 @@ class Modal extends PureComponent {
                 <h2 className="modal-header">{header}</h2>
                 <div className="modal-body">
                     <p className="modal-text">{text}</p>
-
                     {oKbtn}
                     <Button btnCfg={actions.get('Cancel')} handler={closeModal}/>
                 </div>

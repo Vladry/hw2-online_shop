@@ -24,13 +24,10 @@ class Card extends PureComponent {
                     <p  className="card-color">{productItem.color}</p>
                     <div className="card-btn" >
                         <ShoppingCart color ={prodIsInCart ? "red" : "green"} width = "22" className = 'svg-class --activate-cart-modal'
-                        // cartHandler= {cartHandler.bind(null, productItem.id)}
                                       handler={ listsHandler.bind(null, productItem.id) }/>
                         <Button btnCfg={appBtnCfg.get('cart')}
                                 handler={ listsHandler.bind(null, productItem.id) }/>
-                                            {/*handler={cartHandler.bind(null, productItem.id)}/>*/}
                         <ShoppingWishList color={productIsInFavorites ? "red" : "blue"} width="22" className='svg-class --activate-wish-list-modal'
-                                          // wishListHandler= {wishListHandler.bind(null, productItem.id)}
                                           handler={ listsHandler.bind(null, productItem.id) }   />
                     </div>
                 </div>

@@ -65,7 +65,8 @@ class App extends PureComponent {
     };
 
     confirmAddingAction = (id, {target}) => { //сюда зщ по клику "Add to Cart" с карточки товара и получили id добавляемого товара и ивент с нажатой карточки
-        if (target.classList.contains('--activate-cart-modal')) {
+        if (target.classList.contains('--activate-cart-modal')
+        || target.classList.contains('btn')) {
             // this.setState(() => ({addingFlag: "cart"}));
             this.openModal("cart"); // запустили модалку, запросили Ок для добавления товара в корзину
             this.setState(() => ({addingIdtoCart: id}));
@@ -137,8 +138,6 @@ class App extends PureComponent {
                                      cart={this.state.cart}
                                      wishList={this.state.wishList}
                                      listsHandler={this.confirmAddingAction}
-                            // cartHandler={this.confirmAddToCart}
-                            // wishListHandler={this.confirmAddToWishList}
                         />
                     </div>
 
