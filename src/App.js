@@ -16,7 +16,6 @@ class App extends PureComponent {
         products: [],
         cart: [],
         wishList: [], //TODO wishList
-        // addingFlag: ""  //флаг выбора типа модалки и обработки корзины или wishList-а
     };
 
     openModal(modalId) {
@@ -52,21 +51,30 @@ class App extends PureComponent {
         this.setState(() => ({wishList: currentWishList}));
     }
 
+    addingPermitted = ({target}) => {  // получили из модалки ок на добавление товара в cart
+        // const okBtnTxt = target.innerText;
+        if (this.state.activeModal === "cart") {
+            this.addToCart(this.state.addingIdtoCart); // запустили на добавление в Cart товара с id = addingIdtoCart
+        } else if (this.state.activeModal === "wishList") {
+            this.addToWishList(this.state.addingIdtoWishList); // запустили на добавление в Cart товара с id = addingIdtoCart
+        }
+        this.closeModal();  // закрыли модалку
+    };
 
-    addToCartPermitted = ({target}) => {  // получили из модалки ок на добавление товара в cart
-        // const okBtnTxt = target.innerText;
-        this.closeModal();  // закрыли модалку
-        this.addToCart(this.state.addingIdtoCart); // запустили на добавление в Cart товара с id = addingIdtoCart
-    };
-    addToWishListPermitted = ({target}) => {  // получили из модалки ок на добавление товара в cart
-        // const okBtnTxt = target.innerText;
-        this.closeModal();  // закрыли модалку
-        this.addToWishList(this.state.addingIdtoWishList); // запустили на добавление в Cart товара с id = addingIdtoCart
-    };
+    // addToCartPermitted = ({target}) => {  // получили из модалки ок на добавление товара в cart
+    //     // const okBtnTxt = target.innerText;
+    //     this.closeModal();  // закрыли модалку
+    //     this.addToCart(this.state.addingIdtoCart); // запустили на добавление в Cart товара с id = addingIdtoCart
+    // };
+    // addToWishListPermitted = ({target}) => {  // получили из модалки ок на добавление товара в cart
+    //     // const okBtnTxt = target.innerText;
+    //     this.closeModal();  // закрыли модалку
+    //
+    // };
 
     confirmAddingAction = (id, {target}) => { //сюда зщ по клику "Add to Cart" с карточки товара и получили id добавляемого товара и ивент с нажатой карточки
         if (target.classList.contains('--activate-cart-modal')
-        || target.classList.contains('btn')) {
+            || target.classList.contains('btn')) {
             // this.setState(() => ({addingFlag: "cart"}));
             this.openModal("cart"); // запустили модалку, запросили Ок для добавления товара в корзину
             this.setState(() => ({addingIdtoCart: id}));
@@ -128,8 +136,7 @@ class App extends PureComponent {
                     <Modal id='modal' className='modal' header={invokeHeader} text={invokeText}
                            modalState={activeModal} closeModal={this.closeModal}
                            closeButton={closeButton} actions={modBtnCfg}
-                           permitAddToCart={this.addToCartPermitted}
-                           permitAddToWishList={this.addToWishListPermitted}
+                           addingPermitted = {this.addingPermitted}
                            close={this.closeModal}/>
 
                     <div className={(activeModal === "closed") ? 'btn-section btn-inactive' : 'btn-section '}>

@@ -7,11 +7,11 @@ import {Link, animateScroll as scroll} from "react-scroll";
 class Modal extends PureComponent {
 
     render() {
-        const {header, text, closeButton, closeModal, modalState, actions, close, permitAddToCart, permitAddToWishList} = this.props;
+        const {header, text, closeButton, closeModal, modalState, actions, close, addingPermitted} = this.props;
         if (modalState === 'closed') return null;
         let oKbtn;
-        if (modalState === "cart") { oKbtn = <Button btnCfg={actions.get('Ok')} handler={permitAddToCart}/> }
-        else if (modalState === "wishList") { oKbtn = <Button btnCfg={actions.get('Ok')} handler={permitAddToWishList}/> }
+        if (modalState === "cart") { oKbtn = <Button btnCfg={actions.get('Ok')} handler={addingPermitted}/> }
+        else if (modalState === "wishList") { oKbtn = <Button btnCfg={actions.get('Ok')} handler={addingPermitted}/> }
         return (
 
             <div className='modal'
