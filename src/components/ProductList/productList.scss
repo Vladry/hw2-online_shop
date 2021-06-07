@@ -39,7 +39,7 @@
   height: 3px;
   background-color: #324343;
   position: absolute;
-  bottom: 172px;
+  bottom: 192px;
   left: 60px;
 }
 .card-price::before {
@@ -57,9 +57,11 @@
   margin: 1em auto;
 }
 .svg-class {
+  width: 50px;
+  margin: 0 auto;
   color: blue;
   &:hover {
    cursor: pointer;
-    background-color: green;
+    background-color: rgba(0, 200, 0, 0.3);
   }
 }

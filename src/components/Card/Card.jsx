@@ -2,14 +2,17 @@ import React, {PureComponent} from 'react';
 import Button from "../Button/Button";
 import appBtnCfg from "../Button/appBtnCfg";
 import PropTypes from 'prop-types';
-import {ShoppingCart} from '../../icons/shoppingCart';
+import {ShoppingCart} from '../../icons/ShoppingCart';
+import {ShoppingWishList} from '../../icons/ShoppingWishList';
 
 class Card extends PureComponent {
     state = {alreadyInCart: false};
 
     render() {
-        const {productItem, cartHandler, cart} = this.props;
+        const {productItem, cartHandler, wishListHandler, cart, wishList} = this.props;
         const prodIsInCart = cart.some((cartItem)=> cartItem.id === productItem.id);
+        const productIsInFavorites = wishList.some((cartItem)=> cartItem.id === productItem.id);
+        // const productIsInFavorites = false; // TODO productIsInFavorites
 
         return (
             <div className="card-item" data-name={productItem.name}>
@@ -22,8 +25,10 @@ class Card extends PureComponent {
                     <div className="card-btn" >
                         <ShoppingCart color ={prodIsInCart ? "red" : "green"} width = "22" className = 'svg-class'
                         cartHandler= {cartHandler.bind(null, productItem.id)} />
-                        <Button btnCfg={appBtnCfg.get('b4')}
+                        <Button btnCfg={appBtnCfg.get('cart')}
                                             handler={cartHandler.bind(null, productItem.id)}/>
+                        <ShoppingWishList color={productIsInFavorites ? "red" : "blue"} width="22" className='svg-class --activate-awish-list-modal'
+                                          wishListHandler= {wishListHandler.bind(null, productItem.id)} />
                     </div>
                 </div>
             </div>

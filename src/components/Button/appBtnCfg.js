@@ -1,8 +1,8 @@
 const appBtnCfg = new Map ([
-    ["b1", {bgCol: "red", btnText: "Add to cart"}],
+    ["cart", {bgCol: "red", btnText: "Add to cart"}],
     // ["b2", {bgCol: "green", btnText: "Open second modal"}],
-    // ["b3", {bgCol: "blue", btnText: "close"}],
-    ["b4", {bgCol: "blue", btnText: "Add to cart"}],
+    ["close", {bgCol: "blue", btnText: "close"}],
+    ["wishList", {bgCol: "blue", btnText: "Add to wishList"}],
 ]);
 
 export default appBtnCfg;

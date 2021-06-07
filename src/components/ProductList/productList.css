@@ -36,7 +36,7 @@
   height: 3px;
   background-color: #324343;
   position: absolute;
-  bottom: 172px;
+  bottom: 192px;
   left: 60px;
 }
 
@@ -57,11 +57,13 @@
 }
 
 .svg-class {
+  width: 50px;
+  margin: 0 auto;
   color: blue;
 }
 .svg-class:hover {
   cursor: pointer;
-  background-color: green;
+  background-color: rgba(0, 200, 0, 0.3);
 }
 
 /*# sourceMappingURL=productList.css.map */

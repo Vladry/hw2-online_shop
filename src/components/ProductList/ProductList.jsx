@@ -5,12 +5,15 @@ import PropTypes from "prop-types";
 
 class ProductList extends PureComponent {
     render() {
-        const {products, cartHandler, cart} = this.props;
+        const {products, cartHandler, wishListHandler, cart, wishList} = this.props;
         const cardlist = products.map(productItem =>
             <Card key={productItem.id}
                   productItem={productItem}
                   cart = {cart}
-                  cartHandler={cartHandler}/>
+                  wishList={wishList}
+                  cartHandler={cartHandler}
+                  wishListHandler={wishListHandler}
+            />
         );
 
         return (

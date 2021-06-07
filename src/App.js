@@ -7,13 +7,15 @@ import appBtnCfg from './components/Button/appBtnCfg';
 import modBtnCfg from './components/Button/modBtnCfg';
 import ProductList from "./components/ProductList/ProductList";
 import * as cart from "./cartHandleUtils.js";
+import * as wishList from "./wishListHandleUtils.js";
 import {Link, animateScroll as scroll} from "react-scroll";
 
 class App extends PureComponent {
     state = {
         activeModal: "closed",
         products: [],
-        cart: []
+        cart: [],
+        wishList: [] //TODO wishList
     };
 
     openModal(modalId) {
@@ -30,6 +32,7 @@ class App extends PureComponent {
     closeModAtSideClick = ({target}) => {
         if (target.classList.contains("btn")
             || target.classList.contains('modal')
+            || target.classList.contains('svg-class')
         ) return;
         else {
             this.setState({activeModal: "closed"});
@@ -41,20 +44,39 @@ class App extends PureComponent {
         localStorage.setItem("cart", JSON.stringify(currentCart));
         this.setState(() => ({cart: currentCart}));
     }
+    saveWishList(currentWishList) {  // TODO wishList
+        // if (currentCart.length === 0) return;
+        localStorage.setItem("wishList", JSON.stringify(currentWishList));
+        this.setState(() => ({wishList: currentWishList}));
+    }
+
 
     addToCartPermitted = ({target}) => {  // получили из модалки ок на добавление товара в cart
         // const okBtnTxt = target.innerText;
         this.closeModal();  // закрыли модалку
         this.addToCart(this.state.addingIdtoCart); // запустили на добавление в Cart товара с id = addingIdtoCart
     };
+    addToWishListPermitted = ({target}) => {  // получили из модалки ок на добавление товара в cart
+        // const okBtnTxt = target.innerText;
+        this.closeModal();  // закрыли модалку
+        this.addToWishList(this.state.addingIdtoWishList); // запустили на добавление в Cart товара с id = addingIdtoCart
+    };
 
     confirmAddToCart = (id, {target}) => { //сюда зщ по клику "Add to Cart" с карточки товара и получили id добавляемого товара и ивент с нажатой карточки
+        console.log(target.classList.contains('btn'));
         // const clickedTarget = target.closest('.card-item');
-        this.openModal("m1"); // запустили модалку, запросили Ок для добавления товара в корзину
+        this.openModal("cart"); // запустили модалку, запросили Ок для добавления товара в корзину
         this.setState(() => ({addingIdtoCart: id}));
     };
 
+    confirmAddToWishList = (id, {target}) => { //сюда, по клику "Add to wishList" с карточки товара и получили id добавляемого товара и ивент с нажатой карточки
+        // const clickedTarget = target.closest('.card-item');
+        this.openModal("wishList"); // запустили модалку, запросили Ок для добавления товара в wishList
+        this.setState(() => ({addingIdtoWishList: id}));
+    };
+
     addToCart = (id) => { //сюда получить id товара к добавлению в тележку
+        // console.log(target);
         const {products} = this.state;
         const getProduct = products.find(productItem => productItem.id === id);
         let currentCart = cart.checkCartInLocalStorage();
@@ -67,26 +89,42 @@ class App extends PureComponent {
         }
     };
 
+    addToWishList = (id) => { //TODO сюда получить id товара к добавлению в wishList
+        const {products} = this.state;
+        const getProduct = products.find(productItem => productItem.id === id);
+        let currentWishList = wishList.checkWishListInLocalStorage();
+        if (currentWishList.length === 0) {
+            this.saveWishList([getProduct]);
+            return;
+        } else if (!wishList.alreadyExists(currentWishList, getProduct)) {
+            currentWishList.push(getProduct);
+            this.saveWishList(currentWishList)
+        }
+    };
+
     render() {
         const {activeModal, closeButton} = this.state;
         const invokeHeader = modalConfig.get(activeModal).header;
         const invokeText = modalConfig.get(activeModal).text;
-
+console.log('modBtnCfg: ', modBtnCfg);
         return (
             <div className={(activeModal === "closed") ? 'wrapper' : 'wrapper  --darkened'}
-                 onClick={this.closeModAtSideClick}>
+                 onClick={this.closeModAtSideClick}
+            >
                 <div className={'modals-container'}>
 
                     <Modal id='modal' className='modal' header={invokeHeader} text={invokeText}
                            modalState={activeModal} closeModal={this.closeModal}
-                           closeButton={closeButton} actions={modBtnCfg} permitAddToCart={this.addToCartPermitted}
+                           closeButton={closeButton} actions={modBtnCfg}
+                           permitAddToCart={this.addToCartPermitted} permitAddToWishList={this.addToWishListPermitted}
                            close={this.closeModal}/>
 
                     <div className={(activeModal === "closed") ? 'btn-section btn-inactive' : 'btn-section '}>
-                        {/*    <Button btnCfg={appBtnCfg.get('b1')}*/}
-                        {/*            handler={() => this.openModal("m1")}/>*/}
-                        <ProductList products={this.state.products} cart={this.state.cart}
-                                     cartHandler={this.confirmAddToCart}/>
+
+                        <ProductList products={this.state.products} cart={this.state.cart} wishList ={this.state.wishList}
+                                     cartHandler={this.confirmAddToCart}
+                                     wishListHandler={this.confirmAddToWishList}
+                        />
                     </div>
 
                 </div>
@@ -97,6 +135,8 @@ class App extends PureComponent {
     componentDidMount() {
         localStorage.getItem("cart")
         && this.setState(() => ({cart: JSON.parse(localStorage.getItem("cart"))}));
+        localStorage.getItem("wishList")
+        && this.setState(() => ({wishList: JSON.parse(localStorage.getItem("wishList"))}));
 
         fetch('products.json', {
             headers: {
@@ -110,6 +150,5 @@ class App extends PureComponent {
     }
 
 }
-
 
 export default App;
