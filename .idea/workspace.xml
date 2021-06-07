@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9637ec78-4acc-4516-b4f7-ae971fcb7928" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/Modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/Modal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cartHandleUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/cartHandleUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/reportWebVitals.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wishListHandleUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/wishListHandleUtils.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,6 +46,7 @@
       <recent name="C:\Users\DELL\WebstormProjects\hw1_modal-window\src\components\Button" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\DELL\WebstormProjects\hw2- Online shop\src\utils" />
       <recent name="C:\Users\DELL\WebstormProjects\hw2- Online shop\src\icons\svg" />
     </key>
   </component>
@@ -79,7 +83,7 @@
       <workItem from="1622897042888" duration="23000" />
       <workItem from="1622985276299" duration="155000" />
       <workItem from="1623011397211" duration="1305000" />
-      <workItem from="1623013272235" duration="20587000" />
+      <workItem from="1623013272235" duration="22153000" />
     </task>
     <servers />
   </component>
@@ -123,21 +127,9 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/App.js</url>
-          <line>17</line>
+          <line>15</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/App.js</url>
-          <line>111</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/App.js</url>
-          <line>97</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
